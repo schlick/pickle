@@ -1,7 +1,7 @@
 begin
-  require 'activerecord'
-rescue LoadError
   require 'active_record'
+rescue LoadError
+  require 'activerecord'
 end
 
 class ActiveRecord::Base
@@ -48,7 +48,7 @@ class ActiveRecord::Base
     def self.find_all_models(klass, conditions)
       klass.find(:all, :conditions => conditions)
     end
-    
+
     # Create a model using attributes
     def self.create_model(klass, attributes)
       klass.create!(attributes)
